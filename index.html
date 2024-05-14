@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #918d8d, #333333);  
+    color: #ffffff;
+    transition: background 0.5s, color 0.5s;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+    animation: fadeInDown 1s ease;
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+header img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    animation: fadeInUp 1s ease;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #007bff;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+section {
+    padding: 20px;
+    margin-bottom: 20px;
+    animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.gallery img {
+    width: 200px;
+    margin-bottom: 10px;
+    animation: fadeIn 1s ease;
+}
+
+.contact-form {
+    max-width: 400px;
+    margin: 0 auto;
+    animation: fadeIn 1s ease;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+}
+
+.contact-form button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: #0056b3;
+}
+
+.dark-mode {
+    background: linear-gradient(to right, #333333, #000000); /* Dark color for night mode */
+    color: #ffffff;
+    transition: background 0.5s, color 0.5s;
+}
+
+.scroll-style {
+    scrollbar-width: thin;
+    scrollbar-color: #007bff #ffffff;
+}
+
+.scroll-style::-webkit-scrollbar {
+    width: 10px;
+}
+
+.scroll-style::-webkit-scrollbar-track {
+    background: #ffffff;
+}
+
+.scroll-style::-webkit-scrollbar-thumb {
+    background-color: #007bff;
+}
+.meter {
+  width: 180px;
+  height: 20px;
+  position: relative;
+  border-radius: 15px;
+  background-color: #ccc;
+  overflow: hidden;
+}
+
+.fill {
+  width: 50%;
+  height: 100%;
+  border-radius: 15px 0 0 15px;
+  background: linear-gradient(to right, #3498db, #e578bb 100%, transparent 0%, transparent);
+}
+
+.percentage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 14px;
+  color: #333;
+}
+
+ 
+.fish {
+  display: flex;
+}
+
+.elephant {
+  flex: 1;
+  padding: 20px;
+}
+
+.elephant img {
+  max-width: 100%;
+  height: auto;
+}
+
+.tiger {
+  flex: 1;
+  padding: 20px;
+}
+
+.tiger h2 {
+  margin-top: 0;
+}
+
+.tiger p {
+  margin-bottom: 0;
+}
+
+.india {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.paris {
+  text-align: center;
+}
+
+.paris img {
+  max-width: 100%;
+  height: auto;
+}
+
+.paris .text {
+  margin-top: 20px;
+}
+
+.paris h2 {
+  margin-top: 0;
+}
+
+.paris p {
+  margin-bottom: 0;
+}
+
+
+
+    </style>
+    <title>Developer Portfolio</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="2.png" alt="Your Photo">
+            <h1>Sudhanshu Ranjan</h1>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <label class="switch">
+                <input type="checkbox" id="themeToggle">
+                <span class="slider round"></span>
+            </label>
+        </nav>
+        <section id="about">
+            <h2>About Me</h2>
+            <p> Hi, I'm Sudhanshu Ranjan, a frontend web developer based in India. With a passion for clean, <br>elegant design and a knack for transforming ideas into interactive digital experiences, I love bringing <br>websites to life. <br><br>
+
+                My journey into web development started with a fascination for the endless possibilities of the digital world. I quickly immersed myself in learning HTML, CSS, and JavaScript, honing my skills to craft visually appealing and user-friendly interfaces.</p>
+        </section>
+        <section id="portfolio">
+            <h2>Skill sets</h2>
+            <div class="gallery">
+                <!-- Your portfolio projects here -->
+               HTML <div class="meter">
+                    <div class="fill"></div>
+                    <div class="percentage">
+                      <span>50%</span>
+                    </div>
+                  </div>  
+
+               CSS <div class="meter">
+                    <div class="fill"></div>
+                    <div class="percentage">
+                      <span>50%</span>
+                    </div>
+                  </div>   
+
+
+
+               JavaScript <div class="meter">
+                    <div class="fill"></div>
+                    <div class="percentage">
+                      <span>50%</span>
+                    </div>
+                  </div>   
+                  
+            </div><br><br><br><br>
+            <h2>Projects</h2>
+            <div class="fish">
+                <div class="elephant">
+                  <img src="shop 1.PNG" alt="Image">
+                </div>
+                <div class="tiger">
+                  <h2>Iklavaya</h2>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.</p>
+                </div>
+              </div>
+
+
+              <div class="fish">
+                <div class="elephant">
+                  <img src="shot2.JPG" alt="Image">
+                </div>
+                <div class="tiger">
+                  <h2>Coffee Day</h2>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.</p>
+                </div>
+              </div>
+
+
+              <div class="fish">
+                <div class="elephant">
+                  <img src="shot3.PNG" alt="Image">
+                </div>
+                <div class="tiger">
+                  <h2>Library</h2>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.</p>
+                </div>
+              </div>
+
+
+              <div class="fish">
+                <div class="elephant">
+                  <img src="shot4.JPG" alt="Image">
+                </div>
+                <div class="tiger">
+                  <h2>Calculator</h2>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.</p>
+                </div>
+              </div>
+              
+             
+            <h2>Recent Work</h2>
+            <div class="india">
+                <div class="paris">
+                   <video src="ravi.mp4" height="400px" autoplay loop muted></video>
+                  <div class="text">
+                    <h2>Portfolio for video editor</h2>
+                    <p> I had the pleasure of collaborating with Ravi, a talented video editor, to enhance the visual appeal of his projects.</p>
+                    <p>It was a rewarding experience to contribute to Ravi's creative vision, and I'm proud of the results we achieved together.</p>
+                    <p><a href="https://spypanther.github.io/RAVI-PORTFOLIO-3/">visit</a></p>
+                  </div>
+                </div>
+              </div>
+              
+        </section>
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <div class="contact-form">
+                Your Name<input type="text" placeholder="Your Name" class="black">
+                Your Email<input type="email" placeholder="Your Email" class="black">
+                Your Message<textarea placeholder="Your Message" class="black"></textarea>
+                <button>Send</button>
+            </div>
+        </section>
+    </div>
+    <script>// Dark mode toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const themeToggle = document.getElementById('themeToggle');
+            themeToggle.addEventListener('change', function() {
+                if (this.checked) {
+                    document.body.classList.add('dark-mode');
+                } else {
+                    document.body.classList.remove('dark-mode');
+                }
+            });
+        });
+        
+        // Stylized scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const container = document.querySelector('.container');
+            container.classList.add('scroll-style');
+        });
+        </script>
+</body>
+</html>
